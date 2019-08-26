@@ -22,12 +22,15 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float jumpMultiplier;
     [SerializeField] private KeyCode jumpKey;
 
+    public AudioSource m_AudioSource;
+    public chase c;
 
     private bool isJumping;
 
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
+        m_AudioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -49,6 +52,19 @@ public class PlayerMove : MonoBehaviour
         if ((vertInput != 0 || horizInput != 0) && OnSlope())
             charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
 
+        if(horizInput > 0 || vertInput > 0)
+        {
+            c.chaseSpeed += 0.0000001f;
+            Debug.Log(c.chaseSpeed);
+            if (!m_AudioSource.isPlaying)
+            {
+                m_AudioSource.Play();
+            }
+        }
+        else
+        {
+            m_AudioSource.Stop();
+        }
 
         SetMovementSpeed();
         JumpInput();
