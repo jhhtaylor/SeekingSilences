@@ -971,11 +971,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4d6eeb8dea7d54187b6ae326a5ff7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  c: {fileID: 1535269370}
   player: {fileID: 571284230}
   playerCam: {fileID: 1201314855}
   throwForce: 200
   soundToPlay:
-  - {fileID: 8300000, guid: 169ac447eb986a24f82db72822003dae, type: 3}
+  - {fileID: 8300000, guid: 099906c9fbf81504a9f58d538c36f7a4, type: 3}
+  hitEnv:
+  - {fileID: 8300000, guid: 59f6cde60f2eb764582c6827744585fa, type: 3}
+  - {fileID: 8300000, guid: 70328a5edaa9e4e449146790e4271916, type: 3}
   dmg: 0
 --- !u!82 &376795558
 AudioSource:
@@ -2438,7 +2442,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc2c48f11f9b20479a821453189d979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chaseSpeed: 0.05
   player: {fileID: 571284230}
+--- !u!136 &1535269371
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535269369}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.05
+  m_Height: 0.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!1 &1664020975
 GameObject:
   m_ObjectHideFlags: 0

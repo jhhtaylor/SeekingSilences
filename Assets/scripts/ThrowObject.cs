@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ThrowObject : MonoBehaviour
 {
+
+    public chase c;
     public Transform player;
     public Transform playerCam;
     public float throwForce = 10;
@@ -10,12 +12,14 @@ public class ThrowObject : MonoBehaviour
     bool beingCarried = false;
     public AudioClip[] soundToPlay;
     private AudioSource audio;
+    public AudioClip[] hitEnv;
     public int dmg;
     private bool touched = false;
 
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        
     }
 
     void Update()
@@ -51,6 +55,8 @@ public class ThrowObject : MonoBehaviour
                 beingCarried = false;
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
                 RandomAudio();
+                c.chaseSpeed *= 1.1f;
+                Debug.Log(c.chaseSpeed);
             }
             else if (Input.GetMouseButtonDown(1))
             {
@@ -70,11 +76,26 @@ public class ThrowObject : MonoBehaviour
         audio.Play();
 
     }
+    void RandomAudioHitEnv()
+    {
+        if (audio.isPlaying)
+        {
+            return;
+        }
+        audio.clip = hitEnv[Random.Range(0, soundToPlay.Length+1)];
+        audio.Play();
+
+    }
     void OnTriggerEnter()
     {
         if (beingCarried)
         {
+            RandomAudioHitEnv();
             touched = true;
+            
+            c.chaseSpeed *=1.1f;
+            Debug.Log(c.chaseSpeed);
+            
         }
     }
 }
