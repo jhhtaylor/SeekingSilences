@@ -7,11 +7,15 @@ public class chase : MonoBehaviour {
 	public Transform player;
 	static Animator anim;
 
-	// Use this for initialization
-	void Start () 
+    public AudioClip[] screamSounds;
+    private AudioSource audio;
+
+    // Use this for initialization
+    void Start () 
 	{
 		anim = GetComponent<Animator>();
-	}
+        audio = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () 
@@ -37,6 +41,7 @@ public class chase : MonoBehaviour {
 			{
 				anim.SetBool("isAttacking",true);
 				anim.SetBool("isWalking",false);
+                Scream();
 			}
 
 		}
@@ -48,4 +53,14 @@ public class chase : MonoBehaviour {
 		}
 
 	}
+    void Scream()
+    {
+        if (audio.isPlaying)
+        {
+            return;
+        }
+        audio.clip = screamSounds[Random.Range(0, screamSounds.Length)];
+        audio.Play();
+
+    }
 }
