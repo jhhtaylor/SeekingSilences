@@ -56,7 +56,7 @@ public class ThrowObject : MonoBehaviour
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
                 RandomAudio();
                 c.chaseSpeed *= 1.1f;
-                Debug.Log(c.chaseSpeed);
+                //Debug.Log(c.chaseSpeed);
             }
             else if (Input.GetMouseButtonDown(1))
             {
@@ -94,7 +94,7 @@ public class ThrowObject : MonoBehaviour
             touched = true;
             
             c.chaseSpeed *=1.1f;
-            Debug.Log(c.chaseSpeed);
+            //Debug.Log(c.chaseSpeed);
             
         }
     }

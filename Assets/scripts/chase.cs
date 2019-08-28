@@ -10,6 +10,10 @@ public class chase : MonoBehaviour {
     public AudioClip[] screamSounds;
     private AudioSource audio;
 
+    //private bool hit = false;
+
+    public GameEnding ge;
+
     // Use this for initialization
     void Start () 
 	{
@@ -42,7 +46,9 @@ public class chase : MonoBehaviour {
 				anim.SetBool("isAttacking",true);
 				anim.SetBool("isWalking",false);
                 Scream();
-			}
+                ge.CaughtPlayer();
+
+            }
 
 		}
 		else 

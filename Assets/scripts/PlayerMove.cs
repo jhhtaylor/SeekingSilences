@@ -55,7 +55,7 @@ public class PlayerMove : MonoBehaviour
         if(horizInput > 0 || vertInput > 0)
         {
             c.chaseSpeed += 0.0000001f;
-            Debug.Log(c.chaseSpeed);
+            //Debug.Log(c.chaseSpeed);
             if (!m_AudioSource.isPlaying)
             {
                 m_AudioSource.Play();
