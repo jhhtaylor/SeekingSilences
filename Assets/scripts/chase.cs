@@ -7,18 +7,28 @@ public class chase : MonoBehaviour {
 	public Transform player;
 	static Animator anim;
 
-	// Use this for initialization
-	void Start () 
+    public AudioClip[] screamSounds;
+    private AudioSource audio;
+
+    //private bool hit = false;
+
+    public GameEnding ge;
+
+    // Use this for initialization
+    void Start () 
 	{
 		anim = GetComponent<Animator>();
-	}
+        audio = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () 
 	{
+        Debug.Log(chaseSpeed);
 		Vector3 direction = player.position - this.transform.position;
 		float angle = Vector3.Angle(direction,this.transform.forward);
-		if(Vector3.Distance(player.position, this.transform.position) < 10 && angle < 90)
+        //the more noise you make, the further away he will chase you from
+        if (Vector3.Distance(player.position, this.transform.position) < (10 + (chaseSpeed-0.5)) && angle < 90) 
 		{
 			
 			direction.y = 0;
@@ -37,7 +47,10 @@ public class chase : MonoBehaviour {
 			{
 				anim.SetBool("isAttacking",true);
 				anim.SetBool("isWalking",false);
-			}
+                Scream();
+                ge.CaughtPlayer();
+
+            }
 
 		}
 		else 
@@ -48,4 +61,14 @@ public class chase : MonoBehaviour {
 		}
 
 	}
+    void Scream()
+    {
+        if (audio.isPlaying)
+        {
+            return;
+        }
+        audio.clip = screamSounds[Random.Range(0, screamSounds.Length)];
+        audio.Play();
+
+    }
 }

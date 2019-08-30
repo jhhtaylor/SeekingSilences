@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: f03b24d47a04ec3409e7e016623bfa3c
 ModelImporter:
+<<<<<<< HEAD
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Cube
@@ -45,6 +46,16 @@ ModelImporter:
     4300010: Text_003
     7400000: Cube.001|Cube.001Action
     9500000: //RootNode
+=======
+  serializedVersion: 25
+  internalIDToNameTable:
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  - first:
+      74: -8515560403302317629
+    second: Cube.001|Cube.001Action
+>>>>>>> af47d2a5c2d8a713a713f07b4e0d38746d36a76f
   externalObjects: {}
   materials:
     importMaterials: 1
