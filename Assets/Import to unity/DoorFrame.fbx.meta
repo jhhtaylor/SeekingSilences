@@ -1,17 +1,19 @@
 fileFormatVersion: 2
 guid: 19b9d9e7846a15e4d9140082de1cfa42
 ModelImporter:
-  serializedVersion: 25
-  internalIDToNameTable:
-  - first:
-      74: -5547057882903839601
-    second: NurbsPath.004|Cube.001Action
-  - first:
-      74: 8474846131854657320
-    second: NurbsPath.004|NurbsPath.001Action
-  - first:
-      74: 6912728086553682708
-    second: NurbsPath.004|NurbsPath.004Action
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Material.003
+    2100002: Material.008
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: NurbsPath.004
+    7400000: NurbsPath.004|Cube.001Action
+    7400002: NurbsPath.004|NurbsPath.001Action
+    7400004: NurbsPath.004|NurbsPath.004Action
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -43,7 +45,6 @@ ModelImporter:
     - serializedVersion: 16
       name: NurbsPath.004|Cube.001Action
       takeName: NurbsPath.004|Cube.001Action
-      internalID: -5547057882903839601
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -72,7 +73,6 @@ ModelImporter:
     - serializedVersion: 16
       name: NurbsPath.004|NurbsPath.001Action
       takeName: NurbsPath.004|NurbsPath.001Action
-      internalID: 8474846131854657320
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -101,7 +101,6 @@ ModelImporter:
     - serializedVersion: 16
       name: NurbsPath.004|NurbsPath.004Action
       takeName: NurbsPath.004|NurbsPath.004Action
-      internalID: 6912728086553682708
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -141,19 +140,18 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -162,11 +160,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -176,7 +173,6 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

@@ -1,41 +1,26 @@
 fileFormatVersion: 2
 guid: 5edf4b0acf5c7094cbbcd708a7530f7f
 ModelImporter:
-  serializedVersion: 25
-  internalIDToNameTable:
-  - first:
-      74: -5717193181988794679
-    second: Cube.008|CameraAction
-  - first:
-      74: -4831506327992622958
-    second: Cube.008|Cube.001Action
-  - first:
-      74: -1328230739620185724
-    second: Cube.008|Cube.001Action.001
-  - first:
-      74: -8217919248969513376
-    second: Cube.008|Cube.002Action
-  - first:
-      74: 2660744358674843697
-    second: Cube.008|Cube.006Action
-  - first:
-      74: 3471305438391793581
-    second: Cube.008|Cube.006Action.001
-  - first:
-      74: 891771894702681585
-    second: Cube.008|NurbsPath.012|NurbsPath.004|Cube.001Action|NurbsPath.004|Cu.000
-  - first:
-      74: 4951550876194802217
-    second: Cube.008|NurbsPath.012|NurbsPath.004|Cube.001Action|NurbsPath.004|Cube.0
-  - first:
-      74: -2894724793562030912
-    second: Cube.008|NurbsPath.012|NurbsPath.004|NurbsPath.001Action|NurbsPath.004|N
-  - first:
-      74: -7028634880422860591
-    second: Cube.008|NurbsPath.012|NurbsPath.004|NurbsPath.004Action|NurbsPath.004|N
-  - first:
-      74: 8300930616165291719
-    second: Cube.008|SunAction
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Material.012
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube.008
+    7400000: Cube.008|CameraAction
+    7400002: Cube.008|Cube.001Action
+    7400004: Cube.008|Cube.001Action.001
+    7400006: Cube.008|Cube.002Action
+    7400008: Cube.008|Cube.006Action
+    7400010: Cube.008|Cube.006Action.001
+    7400012: Cube.008|NurbsPath.012|NurbsPath.004|Cube.001Action|NurbsPath.004|Cu.000
+    7400014: Cube.008|NurbsPath.012|NurbsPath.004|Cube.001Action|NurbsPath.004|Cube.0
+    7400016: Cube.008|NurbsPath.012|NurbsPath.004|NurbsPath.001Action|NurbsPath.004|N
+    7400018: Cube.008|NurbsPath.012|NurbsPath.004|NurbsPath.004Action|NurbsPath.004|N
+    7400020: Cube.008|SunAction
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -67,7 +52,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Cube.008|CameraAction
       takeName: Cube.008|CameraAction
-      internalID: -5717193181988794679
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -96,7 +80,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Cube.008|Cube.001Action
       takeName: Cube.008|Cube.001Action
-      internalID: -4831506327992622958
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -125,7 +108,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Cube.008|Cube.001Action.001
       takeName: Cube.008|Cube.001Action.001
-      internalID: -1328230739620185724
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -154,7 +136,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Cube.008|Cube.002Action
       takeName: Cube.008|Cube.002Action
-      internalID: -8217919248969513376
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -183,7 +164,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Cube.008|Cube.006Action
       takeName: Cube.008|Cube.006Action
-      internalID: 2660744358674843697
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -212,7 +192,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Cube.008|Cube.006Action.001
       takeName: Cube.008|Cube.006Action.001
-      internalID: 3471305438391793581
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -241,7 +220,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Cube.008|NurbsPath.012|NurbsPath.004|Cube.001Action|NurbsPath.004|Cu.000
       takeName: Cube.008|NurbsPath.012|NurbsPath.004|Cube.001Action|NurbsPath.004|Cu.000
-      internalID: 891771894702681585
       firstFrame: 0
       lastFrame: 2
       wrapMode: 0
@@ -270,7 +248,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Cube.008|NurbsPath.012|NurbsPath.004|Cube.001Action|NurbsPath.004|Cube.0
       takeName: Cube.008|NurbsPath.012|NurbsPath.004|Cube.001Action|NurbsPath.004|Cube.0
-      internalID: 4951550876194802217
       firstFrame: 0
       lastFrame: 2
       wrapMode: 0
@@ -299,7 +276,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Cube.008|NurbsPath.012|NurbsPath.004|NurbsPath.001Action|NurbsPath.004|N
       takeName: Cube.008|NurbsPath.012|NurbsPath.004|NurbsPath.001Action|NurbsPath.004|N
-      internalID: -2894724793562030912
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -328,7 +304,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Cube.008|NurbsPath.012|NurbsPath.004|NurbsPath.004Action|NurbsPath.004|N
       takeName: Cube.008|NurbsPath.012|NurbsPath.004|NurbsPath.004Action|NurbsPath.004|N
-      internalID: -7028634880422860591
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -357,7 +332,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Cube.008|SunAction
       takeName: Cube.008|SunAction
-      internalID: 8300930616165291719
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -397,19 +371,18 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -418,11 +391,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -432,7 +404,6 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
