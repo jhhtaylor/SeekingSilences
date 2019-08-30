@@ -28,7 +28,7 @@ public class chase : MonoBehaviour {
 		Vector3 direction = player.position - this.transform.position;
 		float angle = Vector3.Angle(direction,this.transform.forward);
         //the more noise you make, the further away he will chase you from
-        if (Vector3.Distance(player.position, this.transform.position) < (10 + (0.5-chaseSpeed)) && angle < 90) 
+        if (Vector3.Distance(player.position, this.transform.position) < (10 + (chaseSpeed-0.5)) && angle < 90) 
 		{
 			
 			direction.y = 0;
