@@ -30,7 +30,8 @@ public class DoorController : MonoBehaviour
     public GameObject instructions;
     public AudioSource doorAudio;
     public AudioClip[] soundToPlay;
-    //public AudioClip doorSound;
+    public chase c;
+    
 
 
     void Start()
@@ -55,6 +56,7 @@ public class DoorController : MonoBehaviour
                 //doorAudio.PlayOneShot(doorSound);
                 RandomDoorAudio();
             }
+            
                 
         }
     }
@@ -77,6 +79,7 @@ public class DoorController : MonoBehaviour
         }
         doorAudio.clip = soundToPlay[Random.Range(0, soundToPlay.Length)];
         doorAudio.Play();
+        c.chaseSpeed *= 1.1f; //make noise = increase speed
 
     }
 }
