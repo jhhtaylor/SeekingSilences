@@ -28,7 +28,15 @@ public class DoorController : MonoBehaviour
 {
     // The gameobject / UI that has the instructions for the player "Press 'E' to interact."
     public GameObject instructions;
+    public AudioSource doorAudio;
+    public AudioClip[] soundToPlay;
+    //public AudioClip doorSound;
 
+
+    void Start()
+    {
+        //audio = GetComponent<AudioSource>();
+    }
     // As long as we are colliding with a trigger collider
     private void OnTriggerStay(Collider other)
     {
@@ -44,7 +52,8 @@ public class DoorController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
-                Debug.Log("Trigger");
+                //doorAudio.PlayOneShot(doorSound);
+                RandomDoorAudio();
             }
                 
         }
@@ -59,5 +68,15 @@ public class DoorController : MonoBehaviour
             // Hide instructions
             instructions.SetActive(false);
         }
+    }
+    void RandomDoorAudio()
+    {
+        if (doorAudio.isPlaying)
+        {
+            return;
+        }
+        doorAudio.clip = soundToPlay[Random.Range(0, soundToPlay.Length)];
+        doorAudio.Play();
+
     }
 }
