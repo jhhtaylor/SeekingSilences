@@ -23,17 +23,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class DoorController : MonoBehaviour
+public class KeyController : MonoBehaviour
 {
     // The gameobject / UI that has the instructions for the player "Press 'E' to interact."
     public GameObject instructions;
-    public AudioSource doorAudio;
-    public AudioSource closedDoorAudio;
+    public AudioSource keyAudio;
     public AudioClip[] soundToPlay;
-    public AudioClip[] closedDoorSoundToPlay;
     public chase c;
-    public KeyController kc;
+    public Image hasKeyImage;
+    public bool hasKey = false;
+    public GameObject keyTrigger;
+    
 
 
     void Start()
@@ -44,28 +46,25 @@ public class DoorController : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         // Check if the object has the tag 'Door'
-        if (other.tag == "Door")
+        if (other.tag == "Key")
         {
             // Show the instructions
             instructions.SetActive(true);
             // Get the Animator from the child of the door (If you have the Animator component in the parent,
             // then change it to "GetComponent")
-            Animator anim = other.GetComponentInChildren<Animator>();
-            // Check if the player hits the "E" key and the player has the key
+            //Animator anim = other.GetComponentInChildren<Animator>();
+            // Check if the player hits the "E" key
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if(kc.hasKey)
-                {
-                    anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
-                                                      //doorAudio.PlayOneShot(doorSound);
-                    RandomDoorAudio();
-                    kc.hasKeyImage.gameObject.SetActive(false); //no visual rep
-                }
-                else
-                {
-                    RandomClosedDoorAudio();
-                }
-                
+                Debug.Log("Picked up key");
+                //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
+                //doorAudio.PlayOneShot(doorSound);
+                RandomKeyAudio();
+
+                hasKeyImage.gameObject.SetActive(true); //visual rep
+                hasKey = true; //for logic
+                Destroy(keyTrigger); //no physical key
+                instructions.SetActive(false); //no ins
             }
             
                 
@@ -76,33 +75,21 @@ public class DoorController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Check it is a door
-        if (other.tag == "Door")
+        if (other.tag == "Key")
         {
             // Hide instructions
             instructions.SetActive(false);
         }
     }
-    void RandomDoorAudio()
+    void RandomKeyAudio()
     {
-        if (doorAudio.isPlaying)
+        if (keyAudio.isPlaying)
         {
             return;
         }
-        doorAudio.clip = soundToPlay[Random.Range(0, soundToPlay.Length)];
-        doorAudio.Play();
-        c.chaseSpeed *= 1.1f; //make noise = increase speedw
-
-    }
-    void RandomClosedDoorAudio()
-    {
-        if (closedDoorAudio.isPlaying)
-        {
-            return;
-        }
-        closedDoorAudio.clip = closedDoorSoundToPlay[Random.Range(0, closedDoorSoundToPlay.Length)];
-        closedDoorAudio.Play();
-        c.chaseSpeed *= 1.1f; //make noise = increase speedw
+        keyAudio.clip = soundToPlay[Random.Range(0, soundToPlay.Length)];
+        keyAudio.Play();
+        c.chaseSpeed *= 1.1f; //make noise = increase speed
 
     }
 }
-
