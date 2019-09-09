@@ -29,13 +29,19 @@ public class KeyController : MonoBehaviour
 {
     // The gameobject / UI that has the instructions for the player "Press 'E' to interact."
     public GameObject instructions;
+    public GameObject FEinstructions;
+
     public AudioSource keyAudio;
     public AudioClip[] soundToPlay;
     public chase c;
     public Image hasKeyImage;
     public bool hasKey = false;
     public GameObject keyTrigger;
-    
+
+    public Image hasFEImage;
+    public bool hasFE = false;
+    public GameObject FETrigger;
+
 
 
     void Start()
@@ -48,38 +54,68 @@ public class KeyController : MonoBehaviour
         // Check if the object has the tag 'Door'
         if (other.tag == "Key")
         {
-            // Show the instructions
-            instructions.SetActive(true);
-            // Get the Animator from the child of the door (If you have the Animator component in the parent,
-            // then change it to "GetComponent")
-            //Animator anim = other.GetComponentInChildren<Animator>();
-            // Check if the player hits the "E" key
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == "KeyTrigger")
             {
-                Debug.Log("Picked up key");
-                //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
-                //doorAudio.PlayOneShot(doorSound);
-                RandomKeyAudio();
+                // Show the instructions
+                instructions.SetActive(true);
+                // Get the Animator from the child of the door (If you have the Animator component in the parent,
+                // then change it to "GetComponent")
+                //Animator anim = other.GetComponentInChildren<Animator>();
+                // Check if the player hits the "E" key
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Picked up key");
+                    //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
+                    //doorAudio.PlayOneShot(doorSound);
+                    RandomKeyAudio();
 
-                hasKeyImage.gameObject.SetActive(true); //visual rep
-                hasKey = true; //for logic
-                Destroy(keyTrigger); //no physical key
-                instructions.SetActive(false); //no ins
+                    hasKeyImage.gameObject.SetActive(true); //visual rep
+                    hasKey = true; //for logic
+                    Destroy(keyTrigger); //no physical key
+                    instructions.SetActive(false); //no ins
+                }
             }
-            
-                
+            if (other.name == "FETrigger")
+            {
+                // Show the instructions
+                FEinstructions.SetActive(true);
+                // Get the Animator from the child of the door (If you have the Animator component in the parent,
+                // then change it to "GetComponent")
+                //Animator anim = other.GetComponentInChildren<Animator>();
+                // Check if the player hits the "E" key
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Picked up FE");
+                    //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
+                    //doorAudio.PlayOneShot(doorSound);
+                    RandomKeyAudio();
+
+                    hasFEImage.gameObject.SetActive(true); //visual rep
+                    hasFE = true; //for logic
+                    Destroy(FETrigger); //no physical key
+                    FEinstructions.SetActive(false); //no ins
+                }
+            }
+
         }
     }
 
     // Once we exit colliding with a trigger collider
     private void OnTriggerExit(Collider other)
     {
-        // Check it is a door
+
         if (other.tag == "Key")
         {
             // Hide instructions
             instructions.SetActive(false);
         }
+
+        if (other.tag == "FE")
+        {
+            // Hide instructions
+            FEinstructions.SetActive(false);
+        }
+
     }
     void RandomKeyAudio()
     {
