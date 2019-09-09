@@ -24,7 +24,7 @@ public class chase : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-        Debug.Log(chaseSpeed);
+        //Debug.Log(chaseSpeed);
 		Vector3 direction = player.position - this.transform.position;
 		float angle = Vector3.Angle(direction,this.transform.forward);
         //the more noise you make, the further away he will chase you from
