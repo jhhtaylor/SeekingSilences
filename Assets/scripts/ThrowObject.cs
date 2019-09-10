@@ -86,10 +86,13 @@ public class ThrowObject : MonoBehaviour
         audio.Play();
 
     }
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-        if (beingCarried)
+        if (beingCarried && other.tag != "Door")
         {
+            //Debug.Log("Not hitting door");
+            Debug.Log("Tag: "+ other.tag);
+
             RandomAudioHitEnv();
             touched = true;
             
