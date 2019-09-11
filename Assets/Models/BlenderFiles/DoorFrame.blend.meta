@@ -4,6 +4,9 @@ ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  - first:
       74: 6438949892986699813
     second: NurbsPath.004|Cube.002|Cube.002|CameraAction|Cube.002|CameraAction
   - first:

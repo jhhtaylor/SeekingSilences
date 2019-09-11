@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 9befd63d3b5578548b4d4f924431da49
+guid: 594d38e28d6bed84e8f9f4d30f768410
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: Material.003
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: NurbsPath.031
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
